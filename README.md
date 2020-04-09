@@ -32,11 +32,11 @@ Example for HTML
     data-location="left">Info left</button>
 ```
 
->"tool" - this is the class that you set.
+-"tool" - this is the class that you set.
 
->"title" - this attribute. The text in this attribute will be displayed in the tooltip. If this attribute is empty tooltip is not displayed.
+-"title" - this attribute. The text in this attribute will be displayed in the tooltip. If this attribute is empty tooltip is not displayed.
 
->"data-location" - is responsible for the location of the tooltip. If this attribute is empty tooltip is displayed by default from the top.
+-"data-location" - is responsible for the location of the tooltip. If this attribute is empty tooltip is displayed by default from the top.
 
 
 
@@ -47,8 +47,8 @@ Methods
      $('.tool').toolpip("destroy");
 ```
 
->"click" - a tool tip appears when you click on an item.
+-"click" - a tool tip appears when you click on an item.
 
->"hover" - a tooltip appears when you hover over an item.
+-"hover" - a tooltip appears when you hover over an item.
 
->"destroy" - destroys the tooltip.
+-"destroy" - destroys the tooltip.
