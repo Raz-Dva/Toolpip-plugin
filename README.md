@@ -13,18 +13,12 @@ First, include all nessesary .js and .css files in your webpage.
 <script src="jquery.js"</script>
 <script src="toolpip.js"</script>
 ```
-
-
-
-
 The second run the plugin TOOLPIP on the element that needs a hint.
 
 ```sh    $(document).ready(function () {
         $('.tool').toolpip('click');
      });
 ```
-
-
 Example for HTML
 
 ```sh
@@ -33,12 +27,8 @@ Example for HTML
 ```
 
 -"tool" - this is the class that you set.
-
 -"title" - this attribute. The text in this attribute will be displayed in the tooltip. If this attribute is empty tooltip is not displayed.
-
 -"data-location" - is responsible for the location of the tooltip. If this attribute is empty tooltip is displayed by default from the top.
-
-
 
 Methods
 ```sh
@@ -48,7 +38,5 @@ Methods
 ```
 
 -"click" - a tool tip appears when you click on an item.
-
 -"hover" - a tooltip appears when you hover over an item.
-
 -"destroy" - destroys the tooltip.
