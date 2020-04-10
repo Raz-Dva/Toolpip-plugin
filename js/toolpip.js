@@ -23,7 +23,6 @@
                 if (title == '' || title == undefined) {
                     textToolpip = false;
                 }
-
                 return $("#tool" + i);
             };
             // determine the position of tooltip
@@ -36,9 +35,7 @@
                     posRight = Math.round(posLeft + $(parent).outerWidth()),
                     posBottom = Math.round(posTop + $(parent).outerHeight()),
                     location = $(parent).attr('data-location');
-
                 localLeft = function (aim) {
-
                     aim.css({
                         'left': (posLeft - toolpip.outerWidth()) + 'px',
                         'top': (posBottom - ($(parent).outerHeight() / 2) - (toolpip.outerHeight() / 2)) + 'px',
@@ -56,8 +53,6 @@
                     });
                     aim.attr('data-show', 'right')
                 };
-
-
                 localBottom = function (aim) {
                     aim.css({
                         'left': (posLeft + ($(parent).outerWidth() / 2) - (toolpip.outerWidth() / 2)) + 'px',
@@ -66,8 +61,6 @@
                     });
                     aim.attr('data-show', 'bottom')
                 };
-
-
                 localTop = function (aim) {
                     aim.css({
                         'left': (posLeft + ($(parent).outerWidth() / 2) - (toolpip.outerWidth() / 2)) + 'px',
@@ -76,11 +69,8 @@
                     });
                     aim.attr('data-show', 'top')
                 };
-
-
                 if (location == 'left') {
                     localLeft(toolpip);
-
                 }
                 if (location == 'right') {
                     localRight(toolpip);
@@ -92,8 +82,6 @@
                 if (location == 'top' || location == undefined || location == '') {
                     localTop(toolpip);
                 }
-
-                //if tittle == false (is empty) don`t show
                 if (textToolpip) {
                     toolpip.fadeIn(200)
                 } else {
@@ -114,26 +102,18 @@
                     toolpip.removeAttr('data-show');
                     localBottom(toolpip);
                     toolpip.offset({left: ($('body').width()) - ( toolpip.outerWidth())});
-
                 }
                 if (offsetTop < 0) {
                     toolpip.removeAttr('data-show');
                     localBottom(toolpip);
-                }
-
-
-                textToolpip = true;
+                }                textToolpip = true;
                 return toolpip;
             };
 
             /*============ Methods ============*/
             return {
-
-
                 hover: function () {
-
                     $(this).on("mouseenter.tool", function (e) {
-
                         $('.toolpip').remove();
                         creatClick = addToolpip.call(e.target);
                         positionTool(e.target, creatClick);
@@ -150,22 +130,15 @@
                         if (!$(e.target).is(that) && that.has(e.target).length === 0) {
                             $('.toolpip').remove();
                         }
-
                     });
-
                     $(this).on("click.tool", function (e) {
-
                         if ($(e.target).is(that) || that.has(e.target).length > 0) {
-
                             $('.toolpip').remove();
                             creatClick = addToolpip.call(e.target);
                             positionTool(e.target, creatClick);
-
                         }
-
                     });
                 },
-
                 destroy: function () {
                     $(window).off('.tool');
                     return this.each(function () {
@@ -173,30 +146,21 @@
                     })
                 }
             }
-
         }());
-
-
         $(this).addClass('toolpip-ever');
         var args = Array.prototype.slice.apply(arguments);
-
-        if (!args.length == 0) {
-
+      if (!args.length == 0) {
             for (var i = 0; i < args.length; i++) {
                 var methodVal = args[i];
-
                 if (toolMethod[methodVal]) {
-
                     toolMethod[methodVal].call(this);
                 }
                 else if (!toolMethod[methodVal]) {
                     console.warn('Incorrect method')
                 }
             }
-
         }
         else {
-
             console.warn('The method does not exist')
         }
         return that;
