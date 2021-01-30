@@ -6,7 +6,7 @@ Tooltips can be attached to any HTML element. When you hover the element with yo
  Not recommended for commercial projects.
 
 # How it is work?
-First, download .js and .css files from folder dist from this repository. Include this files in your project.
+First, download .js and .css files from the dist folder of this repository. Include this files in your project.
 
 ```sh
 <link rel="stylesheet" href="toolpip.css">
