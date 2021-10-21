@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Toolpip-plugin
 This is my first plugin written for my portfolio.
 When writing this code, I learned how to work with encapsulation, OPP, and understood the principle of creating plug-ins.
@@ -28,7 +28,9 @@ Example for HTML
 ```
 
 -"tool" - this is the class that you set.
+
 -"title" - this attribute. The text in this attribute will be displayed in the tooltip. If this attribute is empty tooltip is not displayed.
+
 -"data-location" - is responsible for the location of the tooltip. If this attribute is empty tooltip is displayed by default from the top.
 
 Methods
@@ -41,4 +43,4 @@ Methods
 -"click" - a tool tip appears when you click on an item.
 -"hover" - a tooltip appears when you hover over an item.
 -"destroy" - destroys the tooltip.
->>>>>>> 
+
