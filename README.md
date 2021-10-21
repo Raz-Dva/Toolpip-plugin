@@ -18,8 +18,8 @@ Run the plugin TOOLPIP on the element that needs a hint.
 
 ```sh 
    $(document).ready(function () {
-        $('.tool').toolpip('click');
-     });
+      $('.tool').toolpip('click');
+   });
 ```
 Example for HTML
 
