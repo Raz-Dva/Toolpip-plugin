@@ -6,9 +6,9 @@
         var that = this;
         var toolMethod = (function () {
 
-            // console.log(that);
             var addToolpip, positionTool, creatClick, textToolpip = true,
                 i = 0;
+                
             //function to create a tooltip in DOM
             addToolpip = function () {
                 var toolItem = $(this).closest('.toolpip-ever'),
@@ -35,6 +35,7 @@
                     posRight = Math.round(posLeft + $(parent).outerWidth()),
                     posBottom = Math.round(posTop + $(parent).outerHeight()),
                     location = $(parent).attr('data-location');
+
                 localLeft = function (aim) {
                     aim.css({
                         'left': (posLeft - toolpip.outerWidth()) + 'px',
@@ -44,7 +45,6 @@
                     aim.attr('data-show', 'left')
                 };
 
-
                 localRight = function (aim) {
                     aim.css({
                         'left': posRight,
@@ -53,6 +53,7 @@
                     });
                     aim.attr('data-show', 'right')
                 };
+
                 localBottom = function (aim) {
                     aim.css({
                         'left': (posLeft + ($(parent).outerWidth() / 2) - (toolpip.outerWidth() / 2)) + 'px',
@@ -61,6 +62,7 @@
                     });
                     aim.attr('data-show', 'bottom')
                 };
+
                 localTop = function (aim) {
                     aim.css({
                         'left': (posLeft + ($(parent).outerWidth() / 2) - (toolpip.outerWidth() / 2)) + 'px',
@@ -69,9 +71,11 @@
                     });
                     aim.attr('data-show', 'top')
                 };
+
                 if (location == 'left') {
                     localLeft(toolpip);
                 }
+
                 if (location == 'right') {
                     localRight(toolpip);
                 }
@@ -82,11 +86,13 @@
                 if (location == 'top' || location == undefined || location == '') {
                     localTop(toolpip);
                 }
+
                 if (textToolpip) {
                     toolpip.fadeIn(200)
                 } else {
                     toolpip.fadeOut();
                 }
+
                 //if the tooltips go beyond the bounds of the body
                 offsetLeft = Math.round(toolpip.offset().left);
                 offsetRight = Math.round(offsetLeft + toolpip.outerWidth());
@@ -96,41 +102,41 @@
                 if (offsetLeft < 0) {
                     toolpip.removeAttr('data-show');
                     localBottom(toolpip);
-                    toolpip.offset({left: 0});
+                    toolpip.offset({ left: 0 });
                 }
                 if (offsetRight > $('body').width()) {
                     toolpip.removeAttr('data-show');
                     localBottom(toolpip);
-                    toolpip.offset({left: ($('body').width()) - ( toolpip.outerWidth())});
+                    toolpip.offset({ left: ($('body').width()) - (toolpip.outerWidth()) });
                 }
                 if (offsetTop < 0) {
                     toolpip.removeAttr('data-show');
                     localBottom(toolpip);
-                }                textToolpip = true;
+                } textToolpip = true;
                 return toolpip;
             };
 
             /*============ Methods ============*/
             return {
                 hover: function () {
-                    $(this).on("mouseenter.tool", function (e) {
+                    $(this)
+                    .on("mouseenter.tool", function (e) {
                         $('.toolpip').remove();
                         creatClick = addToolpip.call(e.target);
                         positionTool(e.target, creatClick);
-
-                    }).on("mouseleave.tool", function (e) {
+                    })
+                    .on("mouseleave.tool", function (e) {
                         $('.toolpip').remove();
                     });
                 },
 
                 click: function () {
-
                     $(window).on("click.tool", function (e) {
-
                         if (!$(e.target).is(that) && that.has(e.target).length === 0) {
                             $('.toolpip').remove();
                         }
                     });
+
                     $(this).on("click.tool", function (e) {
                         if ($(e.target).is(that) || that.has(e.target).length > 0) {
                             $('.toolpip').remove();
@@ -139,6 +145,7 @@
                         }
                     });
                 },
+
                 destroy: function () {
                     $(window).off('.tool');
                     return this.each(function () {
@@ -147,9 +154,10 @@
                 }
             }
         }());
+
         $(this).addClass('toolpip-ever');
         var args = Array.prototype.slice.apply(arguments);
-      if (!args.length == 0) {
+        if (!args.length == 0) {
             for (var i = 0; i < args.length; i++) {
                 var methodVal = args[i];
                 if (toolMethod[methodVal]) {

@@ -1,0 +1,26 @@
+{
+  "name": "toolpip-plugin",
+  "version": "1.0.0",
+  "description": "This is my first plugin written for my portfolio.\r When writing this code, I learned how to work with encapsulation, OPP, and understood the principle of creating plug-ins.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raz-Dva/Toolpip-plugin.git"
+  },
+  "author": "Honcharov Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raz-Dva/Toolpip-plugin/issues"
+  },
+  "homepage": "https://github.com/Raz-Dva/Toolpip-plugin#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
