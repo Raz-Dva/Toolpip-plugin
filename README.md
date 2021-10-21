@@ -16,7 +16,8 @@ Include all nessesary .js and .css files in your webpage.
 ```
 Run the plugin TOOLPIP on the element that needs a hint.
 
-```sh    $(document).ready(function () {
+```sh 
+   $(document).ready(function () {
         $('.tool').toolpip('click');
      });
 ```
